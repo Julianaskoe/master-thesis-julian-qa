@@ -1,0 +1,4 @@
+Jeg skal forsvare min master thesis i dokumentet master-thesis-julian.md. Kan du formulere 10 spørgsmål som lærer/censor kunne tænkes at stille til mig ved mit forsvar?
+
+I filen claude-chat.md har claude opus 5 været igennem samme opgave og har blandt andet formuleret nogle kritikpunkter. Kan du lave en fil med spørgsmål fra claude chat og kritikpunkter
+formuleret som spørgsmål - men formuleret på det niveau og den stil som du netop har lagt i defense-q-flah731.md?
