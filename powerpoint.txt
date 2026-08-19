@@ -1,0 +1,68 @@
+Speciale
+Formål med undersøgelsen
+Fosfat og kalk balance er aldrig undersøgt hos stadie 4-5.
+Kalk anbefalinger er baseret på 2 balance studier med begrænset N.
+Der ses et knæk i balancen hos dialyse patienter men vi ved ikke hvornår kostanbefalinger er relevante at sætte ind med. 
+Calcificationer ses hos nyresyge derfor er det relevant at vide
+I klinik er kostindsamling via 24 timer recall. 
+Noget der kan styrke et recall aldrig undersøgt på fosfat og aldrig holdt op mod vejet metode.
+
+Forskningsspørgsmål
+Er der sammenhæng mellem kalk og fosfat balance og kreatinin clearance
+Er der sammenhæng mellem vejet og foto metode 
+Studie og population
+Obervationelt kohorte studie (tillægsstudie til en større kohorte)
+Stadie 4-5 kronisk nyresygdom (inklusion via eGFR) præ dialyse
+Studieforløb
+
+
+Målemetoder
+Urin blev opsamlet via 24 timers døgnurin
+Kostindtag blev estimeret via 3 dages vejet kostregistrering og 24 timers fotometode
+Apparant balance for fosfor, calcium of natrium kostindtag-urinudskillelse
+Blev  beregnet som en ratio udskillelse/indtag*100
+Blev også beregnet som balance (estimeret kostiindtag-urinudskillelse)
+Balance og ratio blev korreleret op mod kreatinin clearance
+Statistik 
+Korrelationer blev analyseret med spearman rank
+Gruppe forskelle blev analyseret med mann whitney
+Parret sammenligning blev analyseret via will coxon
+Bland altman blev udnyttet til at belyse overensstemmelse mellem metoderne.
+Primær analyse complete case
+Sensitivitetsanalyse=avaliable case
+For metodesammenligning matched!
+
+
+
+
+
+Overvejelser
+Fosfor ratio korrelation blev kun fundet  ved foto metode
+Mangel på power
+For smalt clearance spænd
+Natrium retention på trods af mangel registrering af tilsat salt
+Flere dages urinprøver
+Calcium balance er ikke brugbar uden fæces
+Fotometode anvendelig på gruppeniveau men ikke individniveau
+
+
+ 
+Styrker og svagheder
+Styrker
+Mulighed for at validere fotometode imod 3 dages vejet kostregistrering
+Validering af metoder mod urin markører.
+Høj compliance
+Undersøgelse af balance med to metoder
+Svagheder
+Mangel på registrering af bordsalt
+Enkelt diætist der har vurderet vejet kostregistrering og fotos
+Kun et enkelt opfølgningsmøde så begrænset oplæring.
+Ingen klassificering af diuretika
+
+
+Konklusion
+Natrium balance var signifikant højere i gruppen under 20 clearance i forhold til over.
+Resultaterne kunne hverken bekræfte eller afkræfte positiv fosfor balance
+Foto
+Perspektivering
+Anledning til undersøgelse af fotometode
