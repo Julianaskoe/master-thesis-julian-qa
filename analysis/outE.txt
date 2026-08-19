@@ -1,0 +1,138 @@
+
+==============================================================================
+1. DIN PAASTAND: fosforbalancen er INDTAGS-styret, ikke udskillelses-styret
+==============================================================================
+Analyse                                        n    rho            95 % CI       p
+----------------------------------------------------------------------------------
+P-balance vejet vs. P-INDTAG vejet            31   0.61   [ 0.32;  0.79]   0.000 *
+P-balance vejet vs. U-FOSFAT                  31  -0.31   [-0.60;  0.05]   0.090
+P-balance foto vs. P-INDTAG foto              31   0.55   [ 0.24;  0.76]   0.001 *
+P-balance foto vs. U-FOSFAT                   31  -0.48   [-0.71; -0.15]   0.006 *
+
+P-ratio vejet vs. P-INDTAG vejet              31  -0.02   [-0.37;  0.34]   0.910
+P-ratio vejet vs. U-FOSFAT                    31   0.82   [ 0.65;  0.91]   0.000 *
+P-ratio foto vs. P-INDTAG foto                31  -0.16   [-0.48;  0.21]   0.398
+P-ratio foto vs. U-FOSFAT                     31   0.81   [ 0.65;  0.91]   0.000 *
+
+>>> Til sammenligning: NATRIUM
+Na-balance vejet vs. Na-INDTAG vejet          31  -0.05   [-0.39;  0.31]   0.801
+Na-balance vejet vs. U-NATRIUM                31  -0.73   [-0.86; -0.50]   0.000 *
+Na-balance foto vs. Na-INDTAG foto            31   0.14   [-0.23;  0.47]   0.455
+Na-balance foto vs. U-NATRIUM                 31  -0.71   [-0.85; -0.48]   0.000 *
+
+==============================================================================
+2. VARIANSDEKOMPOSITION — hvor stor en del kommer fra udskillelsen?
+==============================================================================
+Var(B) = Var(I) + Var(E) - 2Cov(I,E)
+
+                SD(indtag)  SD(udskil)  SD(balance)   andel E  CV_E/CV_I
+------------------------------------------------------------------------
+Fosfor vejet           267         235          235       44%       1.76
+Fosfor foto            276         233          291       42%       1.60
+Natrium vejet          791        1232          973       71%       1.43
+Natrium foto           943        1218          894       63%       1.08
+
+>>> Kernetal til dit argument 2 om natrium:
+  Natrium: SD(udskillelse) = 1232 mg  vs. SD(indtag) = 791 mg
+           -> udskillelsen bidrager 71 % af den samlede varians
+  Fosfor:  SD(udskillelse) = 235 mg  vs. SD(indtag) = 267 mg
+           -> udskillelsen bidrager 44 % af den samlede varians
+
+==============================================================================
+3. E/I-FORHOLDET — hvorfor natrium er mere saarbart
+==============================================================================
+Hvis kun andelen k af urinen opsamles, forskydes balancen med (1-k)*E.
+Hvor meget det betyder afhaenger af E's stoerrelse ift. I.
+
+                   median I   median E     E/I  forskydn. v. k=0,8
+------------------------------------------------------------------
+Natrium vejet          2008       2190    1.09                438 mg
+Natrium foto           1853       2190    1.18                438 mg
+Fosfor vejet            970        474    0.49                 95 mg
+Fosfor foto            1068        474    0.44                 95 mg
+
+==============================================================================
+4. NATRIUM: udskillelse og volumen-uafhaengigt maal mod clearance
+==============================================================================
+Analyse                                        n    rho            95 % CI       p
+----------------------------------------------------------------------------------
+U-natrium vs. CrCl                            32   0.54   [ 0.23;  0.75]   0.001 *
+U-Na/U-kreatinin vs. CrCl (volumen-uafh.)     32   0.28   [-0.08;  0.57]   0.123
+U-fosfat vs. CrCl                             32   0.39   [ 0.05;  0.65]   0.026 *
+U-P/U-kreatinin vs. CrCl (volumen-uafh.)      32   0.04   [-0.31;  0.39]   0.810
+
+Mann-Whitney <20 vs >=20             <20 (n)      >=20 (n)  HL-diff       p
+---------------------------------------------------------------------------
+U-natrium (mg)                    1550.1 ( 8)    2246.1 (24)   -794.3   0.078
+U-Na/U-krea (volumen-uafh.)          9.1 ( 8)      11.7 (24)     -1.6   0.404
+Na-balance vejet                   179.4 ( 8)    -333.5 (23)    592.4   0.121
+Na-balance foto                    -75.5 ( 8)    -495.3 (23)    691.2   0.074
+Na-ratio vejet                      91.8 ( 8)     117.9 (23)    -26.8   0.121
+Na-ratio foto                      101.9 ( 8)     126.2 (23)    -41.4   0.091
+U-fosfat (mg)                      455.3 ( 8)     486.3 (24)   -117.7   0.192
+P-balance vejet                    479.8 ( 8)     498.1 (23)     -6.2   0.912
+P-ratio vejet                       47.1 ( 8)      51.2 (23)     -4.6   0.520
+FE-fosfat                           43.6 ( 8)      34.9 (24)      8.1   0.160
+P-fosfat                             1.4 ( 8)       1.3 (24)      0.1   0.240
+
+==============================================================================
+5. FE-FOSFAT OG P-FOSFAT mod CrCl (dine specialetal)
+==============================================================================
+Analyse                                        n    rho            95 % CI       p
+----------------------------------------------------------------------------------
+FE-fosfat vs. CrCl                            32  -0.17   [-0.49;  0.19]   0.340
+P-fosfat vs. CrCl                             32  -0.38   [-0.65; -0.04]   0.031 *
+FE-fosfat vs. P-fosfat                        32   0.33   [-0.02;  0.61]   0.061
+
+Range restriction i CrCl:
+  SD = 8.21 ml/min
+  <15: 3   15-32: 27   >32: 2   -> 84 % i et baand paa 17 ml/min
+
+  Pearson r = -0.318. Korrigeret for range restriction:
+    hvis SD var 10 ml/min -> r = -0.38 (p ~ 0.033)
+    hvis SD var 12 ml/min -> r = -0.44 (p ~ 0.012)
+    hvis SD var 14 ml/min -> r = -0.50 (p ~ 0.004)
+
+==============================================================================
+6. BLAND-ALTMAN: er proportional bias signifikant?
+==============================================================================
+
+Fosforindtag (foto minus vejet), n = 30
+  Bias                  :    -39.1 mg/doegn  (95 % CI -135 til +57)
+  SD paa differencen    :    257.2
+  95 % limits of agree. :     -543 til +465
+  Wilcoxon (bias = 0?)  : p = 0.328
+  PROPORTIONAL BIAS:
+    Spearman rho(diff, middel) = -0.053   p = 0.782
+    Regression: haeldning = +0.0921  (95 % CI -0.330 til +0.514)  p = 0.659
+    => proportional bias er IKKE signifikant
+    Heteroskedasticitet: rho(|diff|, middel) = +0.001  p = 0.995
+
+Natriumindtag (foto minus vejet), n = 30
+  Bias                  :   -194.1 mg/doegn  (95 % CI -471 til +83)
+  SD paa differencen    :    740.9
+  95 % limits of agree. :    -1646 til +1258
+  Wilcoxon (bias = 0?)  : p = 0.124
+  PROPORTIONAL BIAS:
+    Spearman rho(diff, middel) = +0.082   p = 0.668
+    Regression: haeldning = +0.2259  (95 % CI -0.122 til +0.573)  p = 0.194
+    => proportional bias er IKKE signifikant
+    Heteroskedasticitet: rho(|diff|, middel) = +0.353  p = 0.056
+
+==============================================================================
+7. HVOR MANGE DAGE HAR HVER METODE? (til primaer/sensitivitet)
+==============================================================================
+Metode              0 dage   1 dag  2 dage  3 dage  >=1 dag
+-----------------------------------------------------------
+Fosfor vejet             1       5       2      24       31
+Fosfor foto              1      20       2       9       31
+Natrium vejet            1       5       2      24       31
+Natrium foto             1      19       1      11       31
+
+Begge metoder tilgaengelige (matched/komplet par):
+  Fosfor : n = 30
+  Natrium: n = 30
+  Begge metoder MED 3 dage: fosfor n = 9, natrium n = 11
+
+=> Fotometoden er aarsagen: kun 9-11 deltagere har 3 fotodage.
+   Havde du krfaevet 3 dage for BEGGE metoder, var n faldet til ~9.

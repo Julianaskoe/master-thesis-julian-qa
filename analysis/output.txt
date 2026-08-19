@@ -1,0 +1,207 @@
+
+==============================================================================
+0. GRUPPESTØRRELSER — tæl først, test bagefter
+==============================================================================
+n = 32
+  Diuretika:  ja = 28 (88 %)   nej =  4
+  SGLT2i:     ja = 19 (59 %)   nej = 13
+
+Krydstabel:
+               SGLT2i nej  SGLT2i ja
+Diuretika nej           2          2
+Diuretika ja           11         17
+
+Fisher's exact (samvariation mellem de to præparatgrupper): p = 1.000
+
+==============================================================================
+1. SGLT2i (ja n=19 vs. nej n=13) — Mann-Whitney U, tosidet
+==============================================================================
+Udfald                                 SGLT2i ja          SGLT2i nej        p    r_rb
+-------------------------------------------------------------------------------------
+FE-fosfat (%)                40.09 (33.95–45.29) 33.02 (28.69–43.97)    0.448    0.17
+P-fosfat (mmol/L)               1.35 (1.08–1.40)    1.18 (1.06–1.51)    0.687    0.09
+U-fosfat (mmol/døgn)         15.40 (11.12–25.15) 15.00 (12.95–17.15)    0.478    0.15
+U-natrium (mmol/døgn)       92.30 (71.70–104.50)111.00 (61.05–132.50)    0.514   -0.14
+U-Na / CrCl                     3.65 (2.96–4.16)    4.03 (3.07–5.61)    0.343   -0.21
+U-P / CrCl                      0.81 (0.49–0.91)    0.55 (0.48–0.89)    0.677    0.09
+Kreatininclearance (ml/min)  25.72 (23.09–27.81) 23.12 (17.56–27.00)    0.270    0.24
+
+Mediandifferencer (Hodges-Lehmann) med fordelingsfrit 95 % CI:
+Udfald                         HL-diff                 95 % CI       metode
+----------------------------------------------------------------------------
+FE-fosfat (%)                     3.72   [   -7.77;    13.76]        exact
+P-fosfat (mmol/L)                 0.05   [   -0.20;     0.27]   asymptotic
+U-fosfat (mmol/døgn)              1.80   [   -3.50;     8.65]   asymptotic
+U-natrium (mmol/døgn)           -15.05   [  -51.80;    24.00]   asymptotic
+U-Na / CrCl                      -0.83   [   -2.24;     0.52]        exact
+U-P / CrCl                        0.04   [   -0.19;     0.30]        exact
+Kreatininclearance (ml/min)       2.64   [   -2.67;     8.07]        exact
+
+==============================================================================
+2. Diuretika (ja n=28 vs. nej n=4) — Mann-Whitney U
+==============================================================================
+!! ADVARSEL: referencegruppen er n = 4. Testen er stærkt underpowered.
+   Ved n1=28, n2=4 er den mindst mulige tosidede eksakte p-værdi 0.0001
+   (opnås kun ved FULDSTÆNDIG separation af grupperne).
+   Rapportér primært DESKRIPTIVT.
+
+Udfald                              Diuretika ja       Diuretika nej        p    r_rb
+-------------------------------------------------------------------------------------
+FE-fosfat (%)                40.72 (32.77–46.51) 21.42 (19.13–25.76)    0.009    0.79
+P-fosfat (mmol/L)               1.31 (1.07–1.41)    1.20 (1.08–1.41)    0.932    0.04
+U-fosfat (mmol/døgn)         15.80 (12.86–24.93)   8.90 (8.29–10.50)    0.023    0.72
+U-natrium (mmol/døgn)       97.70 (73.35–133.12) 53.00 (37.40–63.00)    0.010    0.81
+U-Na / CrCl                     4.02 (3.33–5.35)    2.31 (1.84–2.41)    0.000    0.95
+U-P / CrCl                      0.77 (0.49–0.92)    0.46 (0.39–0.50)    0.029    0.68
+Kreatininclearance (ml/min)  25.02 (20.73–27.73) 22.90 (19.96–26.10)    0.721    0.12
+
+De 4 deltagere UDEN diuretika — individuelle værdier (deskriptivt):
+    sglt2  urin_p  plasma_p  u_na   gfr  fe_p
+19      1    9.00      1.31 46.00 20.59 23.17
+23      1   15.00      1.08 72.00 28.75 33.54
+24      0    6.75      1.06 60.00 25.21 17.54
+25      0    8.80      1.72 11.60 18.07 19.67
+
+Kohortemedianer til sammenligning:
+urin_p     15.30
+plasma_p    1.30
+u_na       95.25
+gfr        24.98
+fe_p       36.55
+
+==============================================================================
+3. Kruskal-Wallis — fire behandlingskombinationer
+==============================================================================
+Gruppestørrelser: Diu+SGLT2i n=17, Diu alene n=11, SGLT2i alene n=2, Ingen n=2
+!! To grupper har n=2. Kruskal-Wallis rapporteres for fuldstændighed,
+   men fortolkes med forbehold; Dunn's post hoc er ikke meningsfuld her.
+
+Udfald                             H  df        p   eps^2
+---------------------------------------------------------
+FE-fosfat (%)                  6.858   3    0.077   0.138
+P-fosfat (mmol/L)              0.722   3    0.868  -0.081
+U-fosfat (mmol/døgn)           5.951   3    0.114   0.105
+U-natrium (mmol/døgn)          7.960   3    0.047   0.177 *
+U-Na / CrCl                   10.963   3    0.012   0.284 *
+U-P / CrCl                     4.890   3    0.180   0.068
+Kreatininclearance (ml/min)    1.423   3    0.700  -0.056
+
+Median (IQR) pr. gruppe:
+               n                 fe_p          plasma_p               urin_p                   u_na      u_na_per_gfr    urin_p_per_gfr                  gfr
+combo                                                                                                                                                       
+Diu+SGLT2i    17  41.34 (35.40–45.77)  1.37 (1.08–1.41)  16.20 (11.25–25.50)   96.00 (72.00–110.00)  3.76 (3.20–4.17)  0.82 (0.49–0.92)  25.72 (23.88–27.64)
+Diu alene     11  33.93 (31.84–48.72)  1.18 (1.06–1.42)  15.60 (13.95–18.57)  123.20 (93.45–148.32)  5.12 (3.85–6.20)  0.61 (0.50–1.11)  23.12 (16.63–28.79)
+SGLT2i alene   2  28.35 (25.76–30.95)  1.20 (1.14–1.25)  12.00 (10.50–13.50)    59.00 (52.50–65.50)  2.37 (2.30–2.44)  0.48 (0.46–0.50)  24.67 (22.63–26.71)
+Ingen          2  18.60 (18.07–19.13)  1.39 (1.23–1.55)     7.78 (7.26–8.29)    35.80 (23.70–47.90)  1.51 (1.08–1.95)  0.38 (0.32–0.43)  21.64 (19.85–23.42)
+
+==============================================================================
+4. SGLT2i-effekt INDEN FOR diuretikabrugerne (fjerner diuretika som confounder)
+==============================================================================
+Delkohorte: alle på diuretika, n = 28  (SGLT2i ja n=17, nej n=11)
+
+Udfald                                 SGLT2i ja          SGLT2i nej        p    r_rb
+-------------------------------------------------------------------------------------
+FE-fosfat (%)                41.34 (35.40–45.77) 33.93 (31.84–48.72)    0.711    0.09
+P-fosfat (mmol/L)               1.37 (1.08–1.41)    1.18 (1.06–1.42)    0.510    0.16
+U-fosfat (mmol/døgn)         16.20 (11.25–25.50) 15.60 (13.95–18.57)    0.781    0.07
+U-natrium (mmol/døgn)       96.00 (72.00–110.00)123.20 (93.45–148.32)    0.264   -0.26
+U-Na / CrCl                     3.76 (3.20–4.17)    5.12 (3.85–6.20)    0.147   -0.34
+U-P / CrCl                      0.82 (0.49–0.92)    0.61 (0.50–1.11)    0.926    0.03
+Kreatininclearance (ml/min)  25.72 (23.88–27.64) 23.12 (16.63–28.79)    0.404    0.20
+
+==============================================================================
+5. Korrelationer (Spearman, 95 % CI via Fishers z) og partielle korrelationer
+==============================================================================
+Sammenhæng                                  rho             95 % CI        p
+----------------------------------------------------------------------------
+FE-fosfat vs. CrCl                        -0.17   [-0.49;  0.19]    0.340
+FE-fosfat vs. 1/CrCl (linearisering)       0.17   [-0.19;  0.49]    0.340
+FE-fosfat vs. P-fosfat                     0.33   [-0.02;  0.61]    0.061
+P-fosfat vs. CrCl                         -0.38   [-0.65; -0.04]    0.031 *
+U-natrium vs. CrCl                         0.54   [ 0.23;  0.75]    0.001 *
+U-fosfat vs. CrCl                          0.39   [ 0.05;  0.65]    0.026 *
+
+Pearson til sammenligning (sensitivitetsanalyse):
+FE-fosfat vs. CrCl                        -0.32                        0.076
+FE-fosfat vs. 1/CrCl (linearisering)       0.41                        0.021
+FE-fosfat vs. P-fosfat                     0.28                        0.124
+P-fosfat vs. CrCl                         -0.36                        0.044
+U-natrium vs. CrCl                         0.50                        0.003
+U-fosfat vs. CrCl                          0.29                        0.104
+
+Partiel Spearman — SGLT2i-status vs. udfald, justeret for CrCl:
+Udfald                        r_partiel        p
+------------------------------------------------
+FE-fosfat (%)                      0.18    0.324
+P-fosfat (mmol/L)                  0.17    0.361
+U-fosfat (mmol/døgn)               0.06    0.761
+U-natrium (mmol/døgn)             -0.28    0.129
+U-Na / CrCl                       -0.17    0.351
+U-P / CrCl                         0.13    0.501
+
+==============================================================================
+6. Leave-one-out: hvor robust er FE-fosfat vs. CrCl?
+==============================================================================
+Fuld kohorte:  Spearman rho = -0.174   Pearson r = -0.318
+Leave-one-out: Spearman  -0.233 til -0.092   (spændvidde 0.141)
+               Pearson   -0.370 til -0.201   (spændvidde 0.170)
+
+Mest indflydelsesrige observation for Pearson: række 23 (CrCl 9.49, FE 72.66 %) → r ændres til -0.201
+Spearman er markant mere robust — brug den som primær analyse.
+
+==============================================================================
+7. Hvor stor en forskel KUNNE du have opdaget? (post hoc, Mann-Whitney)
+==============================================================================
+SGLT2i-analysen: n1 = 19, n2 = 13
+Mindste detekterbare effektstørrelse ved 80 % power, alfa = 0,05:
+  Cohens d ≈ 1.03  (dvs. en STOR effekt)
+
+Udfald                        SD (pooled)   MDE i enheder   observeret diff
+----------------------------------------------------------------------------
+FE-fosfat (%)                       14.37           14.83              3.72
+P-fosfat (mmol/L)                    0.27            0.28              0.05
+U-fosfat (mmol/døgn)                 7.67            7.91              1.80
+U-natrium (mmol/døgn)               53.30           55.00            -15.05
+U-Na / CrCl                          2.33            2.40             -0.83
+U-P / CrCl                           0.36            0.37              0.04
+Kreatininclearance (ml/min)          8.34            8.61              2.64
+
+Tolkning: alt mindre end MDE-kolonnen ville du med >20 % sandsynlighed
+overse. Dine observerede differencer er systematisk MINDRE end MDE —
+nulfundene er derfor uinformative, ikke bevis for fravær af effekt.
+
+==============================================================================
+8. Kompensationsfænotyper (FE-fosfat vs. P-fosfat)
+==============================================================================
+Hyperfosfatæmi (P-fosfat > 1,45 mmol/L): n = 7 (22 %)
+Median FE-fosfat = 36.6 %
+
+                 FE over median  FE under median
+                                                
+P-fosfat høj                  4                3
+P-fosfat normal              12               13
+
+Svigtende kompensation = høj P-fosfat TRODS lav FE:
+     gfr  plasma_p  fe_p  sglt2  diuretics
+2  27.64      1.76 35.40      1          1
+25 18.07      1.72 19.67      0          0
+29 24.33      1.60 14.27      1          1
+
+Fisher's exact: p = 1.000  (OR = 1.44)
+
+==============================================================================
+SAMLET FORMULERING TIL METODEAFSNIT
+==============================================================================
+
+"Subgruppeanalyser efter medicinsk behandling blev udført post hoc.
+Kontinuerte udfald blev sammenlignet med Mann-Whitney U-test (to grupper)
+og Kruskal-Wallis-test (>2 grupper); effektstørrelser er angivet som
+rank-biserial korrelation, henholdsvis epsilon-kvadreret, og
+mediandifferencer som Hodges-Lehmann-estimater med fordelingsfrit 95 %
+konfidensinterval. Diuretika kunne ikke klassificeres efter stofgruppe
+(loop/thiazid/MRA), og analysen af diuretika er derfor begrænset til
+eksponering ja/nej med kun N deltagere i referencegruppen; den rapporteres
+deskriptivt. Alle analyser var eksplorative, ikke prædefinerede i
+protokollen og ikke korrigeret for multiple sammenligninger, og betragtes
+som hypotesegenererende."
+

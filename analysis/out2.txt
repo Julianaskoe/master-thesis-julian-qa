@@ -1,0 +1,271 @@
+
+==============================================================================
+1. INTERN DATAVALIDERING — stemmer GFR-kolonnen med FE-kolonnen?
+==============================================================================
+Metode: jeg regner P-kreatinin baglaens ud af din FE-formel og bruger den
+til at genberegne clearance. Hvis begge kolonner bruger samme raadata,
+skal de to clearance-tal vaere identiske.
+
+  #  P-krea (µmol/L)  GFR-kolonne  Genberegnet  Afvigelse
+----------------------------------------------------------
+  1            300.0        19.63        19.63     -0.00%
+  2            205.0        17.68        17.68      0.02%
+  3            257.0        27.64        27.64      0.01%
+  4            289.0        31.23        31.24      0.03%
+  5            259.0        15.70        15.71      0.03%
+  6            165.0        27.98        27.99      0.03%
+  7            267.0        25.28        25.28      0.00%
+  8            383.0        13.41        13.42      0.06%
+  9            178.0        30.58        30.59      0.02%
+ 10            413.0        13.03        13.03      0.01%
+ 11            193.0        31.30        31.30      0.01%
+ 12            278.0        22.30        21.68     -2.77%  <-- AFVIGER
+ 13            280.0        25.76        18.40    -28.56%  <-- AFVIGER
+ 14            202.0        24.75        24.75      0.01%
+ 15            266.0        23.88        23.89      0.03%
+ 16            222.0        27.37        27.37      0.00%
+ 17            403.0        23.12        23.13      0.02%
+ 18            214.0        27.00        27.02      0.06%
+ 19            189.0        53.51        58.51      9.35%  <-- AFVIGER
+ 20            172.0        20.59        20.59      0.01%
+ 21            231.0        21.10        21.10      0.02%
+ 22            364.0        26.33        26.33     -0.00%
+ 23            384.0         9.49         9.49      0.05%
+ 24            163.0        28.75        28.76      0.03%
+ 25            188.0        25.21        25.21     -0.00%
+ 26            369.0        18.07        18.07     -0.00%
+ 27            189.0        25.72        25.72      0.00%
+ 28            358.0        17.56        22.81     29.89%  <-- AFVIGER
+ 29            231.0        41.49        45.09      8.70%  <-- AFVIGER
+ 30            177.0        24.33        24.33      0.00%
+ 31            144.0        24.72        24.72     -0.00%
+ 32            293.0        29.03        29.03      0.00%
+
+Raekker med afvigelse > 1 %: [12, 13, 19, 28, 29]
+
+P-kreatinin (bagudregnet): median 244 µmol/L, range 144–413
+Forventet ved CKD 4-5: ca. 150–500 µmol/L. Vaerdier udenfor = tjek raadata.
+Alle P-kreatininvaerdier er fysiologisk plausible.
+
+==============================================================================
+2. KREATININ-INDEX — er urinopsamlingerne komplette?
+==============================================================================
+n = 32
+  Median       11.84 mg/kg/doegn   (0.105 mmol/kg)
+  IQR          10.15 – 14.46
+  Range         6.57 – 20.36
+  Middel±SD    12.68 ± 3.71
+
+Forventet doegnudskillelse (Walser, alder 75 aar):
+  Maend   15.3 mg/kg/doegn   (-30 % = 10.7)
+  Kvinder 13.3 mg/kg/doegn   (-30 % = 9.3)
+
+Antal under forskellige graenser:
+  <   12 mg/kg/doegn : 17 deltagere (  53 %)
+  <   11 mg/kg/doegn : 12 deltagere (  38 %)
+  < 10.7 mg/kg/doegn : 10 deltagere (  31 %)
+  <   10 mg/kg/doegn :  7 deltagere (  22 %)
+  <  9.3 mg/kg/doegn :  6 deltagere (  19 %)
+  <    9 mg/kg/doegn :  4 deltagere (  12 %)
+  <    8 mg/kg/doegn :  3 deltagere (   9 %)
+
+PRIMAERT FLAGKRITERIUM valgt: < 10 mg/kg/doegn  ->  7 flaggede
+
+De flaggede deltagere, sorteret efter index:
+    cr_idx_mg  u_cr  weight   gfr   u_na  fe_p
+23       6.57  5.25   90.40  9.49 111.00 72.66
+5        7.45  5.86   88.90 15.70  61.05 33.93
+31       7.53  5.12   77.00 24.72  27.50 37.19
+30       8.04  6.20   87.20 24.33  72.00 14.27
+2        9.07  5.22   65.10 17.68  73.80 45.77
+8        9.25  7.40   90.50 13.41  55.00 40.09
+9        9.96  7.84   89.00 30.58 123.20 33.02
+
+Er flagningen skaev over clearance-spektret?
+            Flagget  OK
+                       
+CrCl < 20         4   4
+CrCl >= 20        3  21
+Fisher's exact: p = 0.047   OR = 7.00
+
+Haenger index sammen med kropsvaegt? (hvis ja, er 'lavt index' delvis
+bare 'stor krop', ikke daarlig opsamling)
+Sammenhaeng                                     rho             95 % CI        p
+--------------------------------------------------------------------------------
+Kreatinin-index vs. kropsvaegt                -0.07   [-0.41;  0.29]    0.713
+U-kreatinin (total) vs. kropsvaegt             0.35   [ 0.01;  0.63]    0.046 *
+
+==============================================================================
+3. KORRELERER KREATININ-INDEX MED NYREFUNKTIONEN?
+==============================================================================
+OBS: U-kreatinin staar i taelleren i BAADE index og CrCl. En positiv
+korrelation er derfor delvis regneteknisk (tautologisk).
+
+Sammenhaeng                                     rho             95 % CI        p
+--------------------------------------------------------------------------------
+Kreatinin-index vs. CrCl  (deler U-krea!)      0.45   [ 0.12;  0.69]    0.009 *
+Kreatinin-index vs. P-kreatinin  (UAFHAENGIG)   0.31   [-0.04;  0.60]    0.081
+Kreatinin-index vs. U-natrium                  0.39   [ 0.05;  0.65]    0.026 *
+Kreatinin-index vs. U-fosfat                   0.47   [ 0.15;  0.71]    0.006 *
+Kreatinin-index vs. FE-fosfat                  0.01   [-0.34;  0.36]    0.937
+
+P-kreatinin er maalt i BLOD og er helt uafhaengig af urinopsamlingen.
+Hvis index ikke haenger sammen med P-kreatinin, er der ikke evidens for,
+at de sygeste opsamlede systematisk daarligere.
+
+==============================================================================
+4. FE-FOSFAT — kompenserer de resterende nefroner?
+==============================================================================
+Sammenhaeng                                     rho             95 % CI        p
+--------------------------------------------------------------------------------
+FE-fosfat vs. CrCl                            -0.17   [-0.49;  0.19]    0.340
+FE-fosfat vs. 1/CrCl                           0.17   [-0.19;  0.49]    0.340
+FE-fosfat vs. P-kreatinin (uafh. af opsamling)   0.59   [ 0.30;  0.78]    0.000 *
+FE-fosfat vs. P-fosfat                         0.33   [-0.02;  0.61]    0.061
+U-fosfat/U-krea vs. P-fosfat                   0.38   [ 0.04;  0.65]    0.030 *
+
+Pearson til sammenligning:
+  FE-fosfat vs. CrCl                                -0.32    0.076
+  FE-fosfat vs. 1/CrCl                               0.41    0.021
+  FE-fosfat vs. P-kreatinin                          0.55    0.001
+  FE-fosfat vs. P-fosfat                             0.28    0.124
+
+Leave-one-out paa FE-fosfat vs. 1/CrCl (Pearson) — hvor skroebelig er den?
+  Fuld kohorte: r = +0.405
+  Spaendvidde:  +0.174 til +0.478
+  Mest indflydelsesrig: deltager 23 (CrCl 9.49, FE 72.7 %) -> r falder til +0.174
+
+Range restriction i CrCl:
+  SD(CrCl) = 8.21 ml/min
+  Antal under 15 ml/min: 3
+  Antal 15-32 ml/min:    27
+  Antal over 32 ml/min:  2
+  Hvis SD havde vaeret 10 ml/min -> korrigeret r = -0.38 (p ≈ 0.033)
+  Hvis SD havde vaeret 12 ml/min -> korrigeret r = -0.44 (p ≈ 0.012)
+  Hvis SD havde vaeret 14 ml/min -> korrigeret r = -0.50 (p ≈ 0.004)
+
+==============================================================================
+5. NATRIUM — udskillelse mod nyrefunktion, med og uden normalisering
+==============================================================================
+Sammenhaeng                                     rho             95 % CI        p
+--------------------------------------------------------------------------------
+U-natrium vs. CrCl                             0.54   [ 0.23;  0.75]    0.001 *
+U-natrium vs. P-kreatinin (uafh. af opsamling)   0.10   [-0.25;  0.44]    0.569
+U-natrium/kg vs. CrCl                          0.59   [ 0.31;  0.78]    0.000 *
+U-Na/U-krea vs. CrCl  (VOLUMENFRI)             0.28   [-0.08;  0.57]    0.123
+U-Na/U-krea vs. P-kreatinin (dobbelt uafh.)   -0.12   [-0.45;  0.24]    0.519
+U-fosfat vs. CrCl                              0.39   [ 0.05;  0.65]    0.026 *
+U-fosfat/U-krea vs. CrCl  (VOLUMENFRI)         0.04   [-0.31;  0.39]    0.810
+P-fosfat vs. CrCl                             -0.38   [-0.65; -0.04]    0.031 *
+
+Den volumenfri ratio U-Na/U-kreatinin er immun over for ufuldstaendig
+opsamling, praecis som FE. Hvis den viser samme moenster som U-Na alene,
+er moensteret ikke et opsamlingsartefakt.
+
+Gruppesammenligning CrCl < 20 vs. >= 20 ml/min (Mann-Whitney):
+Udfald                                  < 20             >= 20        p
+-----------------------------------------------------------------------
+U-natrium                      67.42 (n=8)     97.70 (n=24)    0.078
+U-natrium/kg                    0.86 (n=8)      1.34 (n=24)    0.020 *
+U-Na/U-krea                     9.14 (n=8)     11.66 (n=24)    0.404
+U-fosfat                       14.70 (n=8)     15.70 (n=24)    0.192
+U-fosfat/U-krea                 1.59 (n=8)      2.06 (n=24)    0.654
+FE-fosfat                      43.57 (n=8)     34.88 (n=24)    0.160
+P-fosfat                        1.40 (n=8)      1.29 (n=24)    0.240
+Kreatinin-index                10.10 (n=8)     12.78 (n=24)    0.124
+
+==============================================================================
+6. SENSITIVITETSANALYSE — hvad sker der uden de flaggede?
+==============================================================================
+Alle: n = 32    Uden flaggede: n = 25
+Clearance-range: alle 9.5–53.5, uden flaggede 13.0–53.5
+Antal med CrCl < 20:  alle 8, uden flaggede 4
+
+Sammenhaeng                                        alle (n=32)      uden flag (n=25)
+------------------------------------------------------------------------------------
+FE-fosfat vs. CrCl                             -0.17 (p=0.340)       -0.03 (p=0.887)
+FE-fosfat vs. 1/CrCl                           +0.17 (p=0.340)       +0.03 (p=0.887)
+FE-fosfat vs. P-fosfat                         +0.33 (p=0.061)       +0.42 (p=0.036)
+U-natrium vs. CrCl                             +0.54 (p=0.001)       +0.57 (p=0.003)
+U-Na/U-krea vs. CrCl                           +0.28 (p=0.123)       +0.41 (p=0.042)
+U-fosfat vs. CrCl                              +0.39 (p=0.026)       +0.34 (p=0.099)
+P-fosfat vs. CrCl                              -0.38 (p=0.031)       -0.42 (p=0.037)
+
+VIGTIGT: tjek om eksklusionen ogsaa fjerner den nederste ende af
+clearance-spektret. Hvis ja, er tabet af signifikans tvetydigt.
+Flaggede deltageres clearance: 9.5, 13.4, 15.7, 17.7, 24.3, 24.7, 30.6
+
+==============================================================================
+7. KOMPENSATIONSFAENOTYPER
+==============================================================================
+Median FE-fosfat = 36.6 %   |   Hyperfosfataemi (>1,45): n = 7 (22 %)
+
+A: svigtet (hoej P, lav FE)  — n = 3
+     gfr  p_p  fe_p  cr_idx_mg  diu  sglt2
+3  27.64 1.76 35.40      16.25    1      1
+26 18.07 1.72 19.67      17.80    0      0
+30 24.33 1.60 14.27       8.04    1      1
+
+B: utilstraekkelig (hoej P, hoej FE)  — n = 4
+     gfr  p_p  fe_p  cr_idx_mg  diu  sglt2
+10 13.03 1.87 56.99      10.96    1      1
+15 23.88 1.57 41.66      13.44    1      1
+17 23.12 1.73 53.46      19.97    1      1
+23  9.49 1.51 72.66       6.57    1      1
+
+C: velfungerende (normal P, hoej FE)  — n = 12
+     gfr  p_p  fe_p  cr_idx_mg  diu  sglt2
+1  19.63 1.18 43.17      11.84    1      0
+2  17.68 1.39 45.77       9.07    1      1
+4  31.23 1.29 44.81      18.50    1      1
+7  25.28 1.37 72.18      11.11    1      1
+8  13.41 1.42 40.09       9.25    1      1
+11 31.30 1.08 52.38      13.61    1      1
+12 22.30 1.41 41.34      11.83    1      1
+13 25.76 1.39 41.81      12.11    1      1
+22 26.33 1.37 57.76      18.37    1      1
+28 17.56 1.08 43.97      14.63    1      1
+31 24.72 0.85 37.19       7.53    1      1
+32 29.03 1.35 48.72      14.40    1      1
+
+D: ubelastet (normal P, lav FE)  — n = 13
+     gfr  p_p  fe_p  cr_idx_mg  diu  sglt2
+5  15.70 0.86 33.93       7.45    1      0
+6  27.98 1.05 35.92      10.07    1      1
+9  30.58 1.10 33.02       9.96    1      1
+14 24.75 1.32 28.69      11.75    1      1
+16 27.37 0.98 25.89      13.52    1      1
+18 27.00 1.04 32.01      14.03    1      1
+19 53.51 0.98 20.77      20.36    1      1
+20 20.59 1.31 23.17      10.36    0      1
+21 21.10 1.28 26.74      10.73    1      1
+24 28.75 1.08 33.54      10.18    0      1
+25 25.21 1.06 17.54      13.64    0      0
+27 25.72 0.99 34.36      11.31    1      1
+29 41.49 1.23 31.68      17.14    1      1
+
+
+==============================================================================
+8. MEDICINGRUPPER I DENNE FIL
+==============================================================================
+Diuretika ja: 28   nej: 4
+SGLT2i    ja: 28   nej: 4
+
+!! Kontrollér disse to tal mod dit speciale (der stod 26 og 23).
+   Jeg kan ikke laese ja/nej-kolonnerne 100 % sikkert fra et skaermbillede.
+
+Udfald                       SGLT2i ja      SGLT2i nej        p
+---------------------------------------------------------------
+FE-fosfat                        38.64           26.80    0.151
+P-fosfat                          1.31            1.12    0.441
+U-fosfat                         15.80            7.78    0.010 *
+U-natrium                        97.70           58.80    0.008 *
+U-Na/U-krea                      12.13            7.79    0.029 *
+CrCl                             25.50           18.85    0.094
+Kreatinin-index                  11.79           12.74    0.891
+
+==============================================================================
+9. EKSPORT
+==============================================================================
+Skrevet: analysis/beregnede_variable.csv
+(semikolon-separeret med komma som decimaltegn -> aabner direkte i dansk Excel)

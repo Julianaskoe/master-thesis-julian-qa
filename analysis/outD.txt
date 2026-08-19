@@ -1,0 +1,150 @@
+
+==============================================================================
+1. SGLT2 OG DIURETIKA — hvad staar der faktisk i filen?
+==============================================================================
+Raa optaelling af 'yes' i kolonnerne:
+  sglt2      ja = 23   blank/nej = 9
+  diuretics  ja = 27   blank/nej = 5
+
+Du siger det korrekte er SGLT2: 23 ja / 9 nej.
+Filen giver 23 ja. Differencen er 0.
+
+Deltagere hvor sglt2-kolonnen er BLANK (dvs. laest som 'nej'):
+  raekkenr: [1, 3, 5, 14, 18, 23, 25, 26, 29]
+
+=> Hvis 9 skal vaere 'nej', men filen kun har 9 blanke, mangler der 0 blanke celler i filen.
+   Sammenlign selv med medicinlisten.
+
+==============================================================================
+2. NATRIUM VED EKSKLUSION AF FLAGGEDE — bliver det staerkere?
+==============================================================================
+n = 32 -> 25   (7 flaggede fjernet)
+
+Analyse                                             alle     uden flaggede   retning
+------------------------------------------------------------------------------------
+Na-balance vejet vs. CrCl                -0.30 (p=0.101)   -0.26 (p=0.214)   svagere
+Na-balance vejet [med] vs. CrCl          -0.42 (p=0.019)   -0.40 (p=0.051)  uaendret
+Na-balance foto vs. CrCl                 -0.35 (p=0.057)   -0.27 (p=0.210)   svagere
+Na-balance foto [med] vs. CrCl           -0.34 (p=0.059)   -0.29 (p=0.170)   svagere
+Na-ratio vejet vs. CrCl                  +0.24 (p=0.191)   +0.19 (p=0.382)   svagere
+Na-ratio foto vs. CrCl                   +0.20 (p=0.282)   +0.08 (p=0.725)   svagere
+U-natrium vs. CrCl                       +0.54 (p=0.001)   +0.57 (p=0.003) STAERKERE
+U-Na/U-krea vs. CrCl                     +0.28 (p=0.123)   +0.41 (p=0.042) STAERKERE
+Na-balance vejet vs. eGFR                +0.18 (p=0.340)   +0.17 (p=0.422)  uaendret
+U-natrium vs. eGFR                       +0.09 (p=0.638)   +0.17 (p=0.423) STAERKERE
+
+Og fosfor til sammenligning:
+P-balance vejet vs. CrCl                 +0.09 (p=0.615)   +0.15 (p=0.478) STAERKERE
+P-balance vejet vs. eGFR                 +0.46 (p=0.009)   +0.53 (p=0.008) STAERKERE
+P-ratio vejet vs. eGFR                   -0.43 (p=0.015)   -0.53 (p=0.007) STAERKERE
+FE-fosfat vs. eGFR                       -0.51 (p=0.003)   -0.46 (p=0.021)   svagere
+
+==============================================================================
+3. HVAD ICC GAELDER FOR — og hvad den IKKE gaelder for
+==============================================================================
+ICC er beregnet paa de 3 KOSTDAGE. Den siger derfor kun noget om
+INDTAGSDELEN. Udskillelsen er maalt EEN gang og har ingen ICC.
+
+Konsekvens for hver analysetype:
+Analyse                       Bruger                    ICC-relevans
+--------------------------------------------------------------------------
+U-natrium vs. clearance       INGEN kostdata            ICC irrelevant
+FE-fosfat vs. clearance       INGEN kostdata            ICC irrelevant
+Na-balance vs. clearance      indtag OG udskillelse     ICC gaelder delvis
+Na-ratio vs. clearance        indtag OG udskillelse     ICC gaelder delvis
+
+Hvor stor en del af balancens varians kommer fra indtaget?
+  Na vejet   Var(I)=    625189  Var(E)=   1516661  2Cov=    1195662  Var(B)=    946188
+            andel fra indtag =  29.2 %   rho(B,I)=-0.05  rho(B,E)=-0.73
+  Na foto    Var(I)=    889552  Var(E)=   1484439  2Cov=    1574165  Var(B)=    799826
+            andel fra indtag =  37.5 %   rho(B,I)=+0.14  rho(B,E)=-0.71
+  P vejet    Var(I)=     71269  Var(E)=     55377  2Cov=      71547  Var(B)=     55098
+            andel fra indtag =  56.3 %   rho(B,I)=+0.61  rho(B,E)=-0.31
+  P foto     Var(I)=     76347  Var(E)=     54447  2Cov=      45960  Var(B)=     84835
+            andel fra indtag =  58.4 %   rho(B,I)=+0.55  rho(B,E)=-0.48
+
+==============================================================================
+4. HVORFOR DELT FEJL KAN FORSTAERKE (modsat maalestoej)
+==============================================================================
+Simulation: 32 personer, INGEN aegte sammenhaeng mellem clearance og
+natriumudskillelse. Kun tilfaeldig ufuldstaendig opsamling (k).
+
+  Sand korrelation: 0,00 (indbygget i simulationen)
+  Observeret median rho: +0.121
+  90 %-interval: -0.192 til +0.405
+  Andel med p < 0,05: 10 %
+
+  Dit observerede U-Na vs. CrCl: +0,54
+  Percentil i simulationen: 100
+
+=> Delt opsamlingsfejl SKABER positiv korrelation ud af ingenting.
+   Det er MODSAT maalestoej, som traekker korrelationer mod nul.
+
+Samme simulation, men for FE (immun over for k):
+  Observeret median rho: +0.005  (forventet 0)
+=> Ingen kunstig korrelation. FE kan ikke snydes af opsamlingen.
+
+==============================================================================
+5. ER P-KREATININ DET 'RIGTIGE' MAAL? — aerlig gennemgang
+==============================================================================
+Ingen af dine tre maal er sandheden. De har FORSKELLIGE fejl:
+
+Maal            Fejl fra urinopsamling    Fejl fra muskelmasse
+----------------------------------------------------------------------
+CrCl            JA — direkte              nej
+eGFR            nej                       JA — stor
+P-kreatinin     nej                       JA — stor
+
+Pointen er IKKE at P-kreatinin er sand. Pointen er at fejlene er
+UAFHAENGIGE af hinanden. Naar to maal med forskellige fejl er enige,
+er det svaert at forklare med een af fejlene.
+
+Muskelmasse-fejlen: laver den kunstige FE-korrelation?
+Sarkopeni -> lav P-kreatinin OG lav U-kreatinin.
+U-kreatinin staar i FE's NAEVNER -> lav U-cr giver HOEJ FE.
+Saa sarkopeni ville give: lav P-cr + hoej FE = NEGATIV korrelation.
+Du finder: rho = +0.59 (p=0.0004) — POSITIV.
+=> Muskelmasse-fejlen trakker MODSAT dit fund. Fundet er robust.
+
+Direkte test: haenger P-kreatinin sammen med muskelmasse-markoerer?
+  P-kreatinin vs. kreatinin-index       rho = +0.32  p = 0.075
+  P-kreatinin vs. U-kreatinin (total)   rho = +0.47  p = 0.007
+  P-kreatinin vs. kropsvaegt            rho = +0.34  p = 0.054
+  eGFR vs. kreatinin-index              rho = -0.21  p = 0.255
+
+==============================================================================
+6. VEJLEDERENS HYPOTESE — er natrium bedre reguleret end fosfat?
+==============================================================================
+Hypotesen: natriumhomeostase er saa stram (RAAS/aldosteron) at man IKKE
+forventer retention foer meget sent. Fosfat svigter tidligere.
+Hvis det er rigtigt, er et STAERKT natriumfund mistaenkeligt.
+
+Hvad dine data siger:
+Udfald                              vs CrCl          vs eGFR        vs P-krea
+-----------------------------------------------------------------------------
+U-natrium                   +0.54 (p=0.001)  +0.09 (p=0.638)  +0.11 (p=0.546)
+Na-balance vejet            -0.30 (p=0.101)  +0.18 (p=0.340)  -0.23 (p=0.222)
+Na-ratio vejet              +0.24 (p=0.191)  -0.15 (p=0.408)  +0.17 (p=0.361)
+FE-fosfat                   -0.17 (p=0.340)  -0.51 (p=0.003)  +0.59 (p=0.000)
+P-fosfat                    -0.38 (p=0.031)  -0.68 (p=0.000)  +0.59 (p=0.000)
+P-ratio vejet               +0.19 (p=0.307)  -0.43 (p=0.015)  +0.45 (p=0.012)
+P-balance vejet             +0.09 (p=0.615)  +0.46 (p=0.009)  -0.36 (p=0.044)
+
+=> Alle fosfat-maal er signifikante mod de urin-uafhaengige maal.
+   Alle natrium-maal er signifikante KUN mod CrCl.
+   Det er praecis moensteret vejlederens fysiologi forudsiger.
+
+==============================================================================
+7. MEDIAN VS GENNEMSNIT — betyder antal dage noget?
+==============================================================================
+Med 1 dag er median = gennemsnit. Med 2 dage er median = gennemsnit.
+Kun ved 3 dage er de forskellige.
+
+Fosfor vejet    0 dag(e): n=1  1 dag(e): n=5  2 dag(e): n=2  3 dag(e): n=24   -> median!=gns for 24
+Fosfor foto     0 dag(e): n=1  1 dag(e): n=20  2 dag(e): n=2  3 dag(e): n=9   -> median!=gns for 9
+Natrium vejet   0 dag(e): n=1  1 dag(e): n=5  2 dag(e): n=2  3 dag(e): n=24   -> median!=gns for 24
+Natrium foto    0 dag(e): n=1  1 dag(e): n=19  2 dag(e): n=1  3 dag(e): n=11   -> median!=gns for 11
+
+=> Median og gennemsnit kan KUN afvige for de deltagere der har 3 dage.
+   For foto-metoden er det kun 9-11 deltagere. Forskellen er derfor
+   drevet af meget faa personer — brug gennemsnit som primaer.

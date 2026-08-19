@@ -1,0 +1,205 @@
+
+==============================================================================
+1. HVAD ER GALT I DE 5 GFR-RAEKKER?
+==============================================================================
+Din FE-kolonne er 100 % konsistent med P-cr, U-cr, U-p og P-p (afvigelse
+0,0000 % i alle 32 raekker). Fejlen sidder derfor i GFR-KOLONNEN.
+
+Jeg regner baglaens: hvilken U-cr eller P-cr ville give din GFR-vaerdi?
+
+  #  Din GFR  Korrekt  Faktor  U-cr brugt?  P-cr brugt?
+-------------------------------------------------------
+ 12    22.30    21.68  1.0285        8.927          270
+ 13    25.76    18.40  1.3998       10.386          200
+ 19    53.51    58.51  0.9145       14.563          207
+ 28    17.56    22.81  0.7699        9.054          465
+ 29    41.49    45.09  0.9200       13.800          251
+
+(faktiske vaerdier for sammenligning:)
+ 12                                  8.680          278
+ 13                                  7.420          280
+ 19                                 15.925          189
+ 28                                 11.760          358
+ 29                                 15.000          231
+
+Effekt paa gruppeinddelingen <20 vs. >=20 ml/min:
+  Med din GFR-kolonne:  <20 n=8, >=20 n=24
+  Med korrekt CrCl:     <20 n=8, >=20 n=24
+  Deltagere der SKIFTER gruppe: [13, 28]
+    gfr_sheet  crcl grp_sheet grp_calc
+13      25.76 18.40      >=20      <20
+28      17.56 22.81       <20     >=20
+
+==============================================================================
+2. DOMINERER INDTAGET BALANCEN?  (punkt 1 fra foerste feedback)
+==============================================================================
+Hvis balancen B = I - E naesten kun afspejler I, tester dine
+balanceanalyser i praksis 'korrelerer indtaget med clearance?'
+
+Mineral / metode              SD indtag  SD udskil.  rho(B,I)  rho(B,E)
+-----------------------------------------------------------------------
+Fosfor, vejet                       267         235      0.61     -0.31
+Fosfor, foto                        276         233      0.55     -0.48
+Natrium, vejet                      791        1232     -0.05     -0.73
+Natrium, foto                       943        1218      0.14     -0.71
+
+SD-forholdet viser hvor meget mere indtaget svinger end udskillelsen.
+rho(B,I) taet paa 1,0 = balancen ER indtaget.
+
+==============================================================================
+3. DE TRE ENDPOINTS MOD NYREFUNKTION — hvilket er bedst?
+==============================================================================
+>>> A) mod CrCl (paavirkes af opsamlingskvalitet)
+Sammenhaeng                                      n    rho            95 % CI        p
+-------------------------------------------------------------------------------------
+Fosforbalance (vejet) vs. CrCl                  31   0.14   [-0.22;  0.47]   0.4385
+Fosforbalance (foto) vs. CrCl                   31  -0.11   [-0.45;  0.26]   0.5614
+Fosfor-ratio E/I (vejet) vs. CrCl               31   0.14   [-0.22;  0.47]   0.4437
+Fosfor-ratio E/I (foto) vs. CrCl                31   0.30   [-0.06;  0.59]   0.1006
+FE-fosfat vs. CrCl                              32  -0.18   [-0.50;  0.18]   0.3203
+Natriumbalance (vejet) vs. CrCl                 31  -0.27   [-0.57;  0.09]   0.1373
+Natriumbalance (foto) vs. CrCl                  31  -0.38   [-0.65; -0.03]   0.0342 *
+Natrium-ratio E/I (vejet) vs. CrCl              31   0.20   [-0.17;  0.52]   0.2817
+Natrium-ratio E/I (foto) vs. CrCl               31   0.24   [-0.13;  0.55]   0.1967
+
+>>> B) mod P-KREATININ (blodproeve — IMMUN over for opsamling)
+    NB: fortegn vender, fordi hoej P-cr = DAARLIG nyrefunktion
+Sammenhaeng                                      n    rho            95 % CI        p
+-------------------------------------------------------------------------------------
+Fosforbalance (vejet) vs. P-kreatinin           31  -0.36   [-0.64; -0.01]   0.0442 *
+Fosforbalance (foto) vs. P-kreatinin            31  -0.19   [-0.51;  0.17]   0.3019
+Fosfor-ratio (vejet) vs. P-kreatinin            31   0.45   [ 0.11;  0.69]   0.0120 *
+Fosfor-ratio (foto) vs. P-kreatinin             31   0.27   [-0.09;  0.57]   0.1366
+FE-fosfat vs. P-kreatinin                       32   0.59   [ 0.30;  0.78]   0.0004 *
+Natriumbalance (vejet) vs. P-kreatinin          31  -0.23   [-0.54;  0.14]   0.2223
+Natriumbalance (foto) vs. P-kreatinin           31   0.08   [-0.28;  0.42]   0.6796
+Natrium-ratio (vejet) vs. P-kreatinin           31   0.17   [-0.20;  0.49]   0.3606
+Natrium-ratio (foto) vs. P-kreatinin            31  -0.16   [-0.48;  0.21]   0.3999
+
+==============================================================================
+4. SPLIT BALANCEN OP — kommer fundet fra indtag eller udskillelse?
+==============================================================================
+Sammenhaeng                                      n    rho            95 % CI        p
+-------------------------------------------------------------------------------------
+U-natrium vs. CrCl                              32   0.56   [ 0.26;  0.76]   0.0010 *
+Na-INDTAG (vejet) vs. CrCl                      31   0.49   [ 0.16;  0.72]   0.0051 *
+Na-INDTAG (foto) vs. CrCl                       31   0.30   [-0.06;  0.59]   0.0961
+U-fosfat vs. CrCl                               32   0.39   [ 0.05;  0.65]   0.0257 *
+P-INDTAG (vejet) vs. CrCl                       31   0.40   [ 0.05;  0.66]   0.0264 *
+P-INDTAG (foto) vs. CrCl                        31   0.25   [-0.11;  0.56]   0.1743
+
+Samme split, men mod P-kreatinin (uafhaengig af opsamling):
+Sammenhaeng                                      n    rho            95 % CI        p
+-------------------------------------------------------------------------------------
+U-natrium vs. P-kreatinin                       32   0.11   [-0.25;  0.44]   0.5463
+Na-INDTAG (vejet) vs. P-kreatinin               31  -0.02   [-0.37;  0.33]   0.9006
+U-fosfat vs. P-kreatinin                        32   0.36   [ 0.01;  0.63]   0.0446 *
+P-INDTAG (vejet) vs. P-kreatinin                31  -0.00   [-0.36;  0.35]   0.9888
+
+==============================================================================
+5. ICC — hvor reproducerbart er ET doegns kostregistrering?
+==============================================================================
+ICC = hvor stor en andel af variationen i dine tal der er AEGTE
+forskelle mellem personer (frem for tilfaeldig dag-til-dag stoej).
+
+FOSFORINDTAG, vejet (3 dage)
+  n = 26 deltagere, gennemsnit 2.9 dage
+  Within-person SD  :      256 mg/doegn
+  Between-person SD :      232 mg/doegn
+  Within-person CV  :     24.8 %
+  ICC (1 dag)       :    0.451   -> attenuering sqrt(ICC) = 0.671
+  ICC (3 dages gns.) :    0.706
+    sand r = 0.30  ->  du ville maale 0.20  (p = 0.269)  signifikant: NEJ
+    sand r = 0.40  ->  du ville maale 0.27  (p = 0.137)  signifikant: NEJ
+    sand r = 0.50  ->  du ville maale 0.34  (p = 0.060)  signifikant: NEJ
+    sand r = 0.60  ->  du ville maale 0.40  (p = 0.022)  signifikant: JA 
+
+NATRIUMINDTAG, vejet (3 dage)
+  n = 26 deltagere, gennemsnit 2.9 dage
+  Within-person SD  :     1066 mg/doegn
+  Between-person SD :      421 mg/doegn
+  Within-person CV  :     48.9 %
+  ICC (1 dag)       :    0.135   -> attenuering sqrt(ICC) = 0.367
+  ICC (3 dages gns.) :    0.313
+    sand r = 0.30  ->  du ville maale 0.11  (p = 0.548)  signifikant: NEJ
+    sand r = 0.40  ->  du ville maale 0.15  (p = 0.422)  signifikant: NEJ
+    sand r = 0.50  ->  du ville maale 0.18  (p = 0.314)  signifikant: NEJ
+    sand r = 0.60  ->  du ville maale 0.22  (p = 0.225)  signifikant: NEJ
+
+FOSFORINDTAG, foto (3 dage)
+  n = 11 deltagere, gennemsnit 2.8 dage
+  Within-person SD  :      211 mg/doegn
+  Between-person SD :      258 mg/doegn
+  Within-person CV  :     20.6 %
+  ICC (1 dag)       :    0.600   -> attenuering sqrt(ICC) = 0.775
+  ICC (3 dages gns.) :    0.809
+    sand r = 0.30  ->  du ville maale 0.23  (p = 0.201)  signifikant: NEJ
+    sand r = 0.40  ->  du ville maale 0.31  (p = 0.084)  signifikant: NEJ
+    sand r = 0.50  ->  du ville maale 0.39  (p = 0.029)  signifikant: JA 
+    sand r = 0.60  ->  du ville maale 0.46  (p = 0.007)  signifikant: JA 
+
+NATRIUMINDTAG, foto (3 dage)
+  n = 12 deltagere, gennemsnit 2.9 dage
+  Within-person SD  :      676 mg/doegn
+  Between-person SD :      732 mg/doegn
+  Within-person CV  :     32.7 %
+  ICC (1 dag)       :    0.540   -> attenuering sqrt(ICC) = 0.735
+  ICC (3 dages gns.) :    0.774
+    sand r = 0.30  ->  du ville maale 0.22  (p = 0.226)  signifikant: NEJ
+    sand r = 0.40  ->  du ville maale 0.29  (p = 0.103)  signifikant: NEJ
+    sand r = 0.50  ->  du ville maale 0.37  (p = 0.039)  signifikant: JA 
+    sand r = 0.60  ->  du ville maale 0.44  (p = 0.012)  signifikant: JA 
+
+
+==============================================================================
+6. BLAND-ALTMAN: vejet vs. foto
+==============================================================================
+
+Fosforindtag (foto minus vejet), n = 30
+  Bias                 :    -39.1 mg/doegn (95 % CI -135 til +57)
+  SD paa differencen   :    257.2
+  95 % limits of agree.:     -543 til +465
+  Bias i % af middel   :     -3.8 %
+  Wilcoxon             : p = 0.3285
+  Proportional bias    : rho(difference, middel) = -0.05
+
+Natriumindtag (foto minus vejet), n = 30
+  Bias                 :   -194.1 mg/doegn (95 % CI -471 til +83)
+  SD paa differencen   :    740.9
+  95 % limits of agree.:    -1646 til +1258
+  Bias i % af middel   :     -9.2 %
+  Wilcoxon             : p = 0.1241
+  Proportional bias    : rho(difference, middel) = +0.08
+
+==============================================================================
+7. ROBUSTHEDSMATRIX — hvilke fund holder mod BEGGE maal?
+==============================================================================
+Flaggede (kreatinin-index < 10 mg/kg/doegn): 7
+Udfald                              vs CrCl        vs P-krea    u. flag (CrCl)
+------------------------------------------------------------------------------
+FE-fosfat                   -0.18 (p=0.320)  +0.59 (p=0.000)   -0.02 (p=0.919)
+U-P/U-krea                  +0.02 (p=0.927)  +0.12 (p=0.506)   +0.10 (p=0.645)
+P-fosfat                    -0.43 (p=0.013)  +0.59 (p=0.000)   -0.50 (p=0.012)
+U-natrium                   +0.56 (p=0.001)  +0.11 (p=0.546)   +0.61 (p=0.001)
+U-Na/U-krea                 +0.25 (p=0.172)  -0.12 (p=0.523)   +0.38 (p=0.062)
+P-balance vejet             +0.14 (p=0.438)  -0.36 (p=0.044)   +0.22 (p=0.302)
+P-ratio vejet               +0.14 (p=0.444)  +0.45 (p=0.012)   +0.06 (p=0.778)
+Na-balance vejet            -0.27 (p=0.137)  -0.23 (p=0.222)   -0.22 (p=0.296)
+Na-balance foto             -0.38 (p=0.034)  +0.08 (p=0.680)   -0.33 (p=0.112)
+Na-ratio foto               +0.24 (p=0.197)  -0.16 (p=0.400)   +0.15 (p=0.480)
+
+==============================================================================
+8. GRUPPESAMMENLIGNING <20 vs. >=20 (korrekt CrCl)
+==============================================================================
+Udfald                               <20            >=20        p
+-----------------------------------------------------------------
+Na-balance vejet            179.4 (n=8)   -324.3 (n=23)   0.1869
+Na-balance foto             -27.3 (n=8)   -495.3 (n=23)   0.0381 *
+Na-ratio foto               100.6 (n=8)    126.2 (n=23)   0.0429 *
+U-natrium                  1550.1 (n=8)   2246.1 (n=24)   0.0644
+U-Na/U-krea                  11.1 (n=8)     11.2 (n=24)   0.7169
+P-balance vejet             479.8 (n=8)    498.1 (n=23)   0.7737
+FE-fosfat                    42.5 (n=8)     34.9 (n=24)   0.1883
+Kreatinin-index              10.1 (n=8)     13.5 (n=24)   0.0635
+
+Skrevet: analysis/beregnet_fuld.csv

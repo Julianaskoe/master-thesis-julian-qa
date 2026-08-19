@@ -1,0 +1,258 @@
+
+==============================================================================
+0. HVOR MANGE DELTAGERE HAR HVILKE DATA?
+==============================================================================
+Total i filen:                       n = 32
+  Fosfor, vejet          mindst 1 dag: 31   alle 3 dage: 24
+  Fosfor, foto           mindst 1 dag: 31   alle 3 dage:  9
+  Natrium, vejet         mindst 1 dag: 31   alle 3 dage: 24
+  Natrium, foto          mindst 1 dag: 31   alle 3 dage: 11
+
+  BEGGE metoder, fosfor:  n = 30
+  BEGGE metoder, natrium: n = 30
+
+=> Specialets 'n=31' svarer til 'mindst een dag med mindst een metode'.
+   Metodesammenligningen kraever BEGGE metoder -> lavere n.
+
+==============================================================================
+1. GFR-KOLONNEN — status efter din kontrol
+==============================================================================
+  #   P-cr    U-cr   Din GFR  Genberegnet  Afvig %
+--------------------------------------------------
+ 12    278   8.680     22.30        21.68    -2.77
+ 13    280   7.420     25.76        18.40   -28.56
+ 19    189  15.925     53.51        58.51     9.35
+ 28    358  11.760     17.56        22.81    29.89
+ 29    231  15.000     41.49        45.09     8.70
+
+Afvigende raekker: [12, 13, 19, 28, 29]
+
+Du har bekraeftet at 41,49 (raekke 29) og 22,30 (raekke 12) er korrekte.
+Det betyder, at GFR-kolonnen bruger ANDRE raadata end FE-kolonnen for
+disse deltagere — fx et andet urinvolumen eller en anden proeve.
+
+Tilbage at afklare — raekke 13, 19 og 28:
+  Raekke 13: din GFR 25.76 | af FE-data 18.40 | eGFR 14 | P-cr 280 | U-cr 7.420
+  Raekke 19: din GFR 53.51 | af FE-data 58.51 | eGFR 33 | P-cr 189 | U-cr 15.925
+  Raekke 28: din GFR 17.56 | af FE-data 22.81 | eGFR 14 | P-cr 358 | U-cr 11.760
+
+==============================================================================
+2. eGFR — det tredje, HELT uafhaengige nyrefunktionsmaal
+==============================================================================
+eGFR: median 20 ml/min/1.73m2, range 10–33
+CrCl: median 24.98 ml/min, range 9.49–53.51
+
+Mediandifference CrCl - eGFR: +3.47 ml/min
+Antal hvor CrCl > eGFR: 23 af 32
+Wilcoxon CrCl vs. eGFR: p = 0.0011
+
+Analyse                                  n    rho            95 % CI        p
+-----------------------------------------------------------------------------
+eGFR vs. CrCl (din kolonne)             32   0.55   [ 0.25;  0.75]   0.0011 *
+eGFR vs. P-kreatinin                    32  -0.91   [-0.96; -0.83]   0.0000 *
+eGFR vs. kreatinin-index                32  -0.21   [-0.52;  0.15]   0.2547
+
+=> eGFR bygger KUN paa P-kreatinin, alder og koen. Den kan ikke
+   paavirkes af urinopsamlingen. Perfekt tredje test.
+
+==============================================================================
+3. HOVEDANALYSER — samme udfald mod TRE nyrefunktionsmaal
+==============================================================================
+
+>>> mod CrCl (din GFR-kolonne)  (paavirkes af opsamling)
+Analyse                                  n    rho            95 % CI        p
+-----------------------------------------------------------------------------
+FE-fosfat                               32  -0.17   [-0.49;  0.19]   0.3395
+P-fosfat                                32  -0.38   [-0.65; -0.04]   0.0307 *
+U-fosfat (mg)                           32   0.39   [ 0.05;  0.65]   0.0263 *
+U-natrium (mg)                          32   0.54   [ 0.23;  0.75]   0.0015 *
+U-Na/U-krea (volumenfri)                32   0.28   [-0.08;  0.57]   0.1231
+U-P/U-krea (volumenfri)                 32   0.04   [-0.31;  0.39]   0.8095
+Kreatinin-index                         32   0.45   [ 0.12;  0.69]   0.0093 *
+
+>>> mod eGFR  (UAFHAENGIG af opsamling)
+Analyse                                  n    rho            95 % CI        p
+-----------------------------------------------------------------------------
+FE-fosfat                               32  -0.51   [-0.73; -0.20]   0.0026 *
+P-fosfat                                32  -0.68   [-0.83; -0.44]   0.0000 *
+U-fosfat (mg)                           32  -0.25   [-0.55;  0.11]   0.1694
+U-natrium (mg)                          32   0.09   [-0.27;  0.42]   0.6381
+U-Na/U-krea (volumenfri)                32   0.19   [-0.17;  0.50]   0.3045
+U-P/U-krea (volumenfri)                 32  -0.14   [-0.47;  0.22]   0.4480
+Kreatinin-index                         32  -0.21   [-0.52;  0.15]   0.2547
+
+>>> mod P-kreatinin  (UAFHAENGIG (NB: fortegn vender))
+Analyse                                  n    rho            95 % CI        p
+-----------------------------------------------------------------------------
+FE-fosfat                               32   0.59   [ 0.30;  0.78]   0.0004 *
+P-fosfat                                32   0.59   [ 0.30;  0.78]   0.0004 *
+U-fosfat (mg)                           32   0.36   [ 0.01;  0.63]   0.0446 *
+U-natrium (mg)                          32   0.11   [-0.25;  0.44]   0.5463
+U-Na/U-krea (volumenfri)                32  -0.12   [-0.45;  0.24]   0.5225
+U-P/U-krea (volumenfri)                 32   0.12   [-0.24;  0.45]   0.5056
+Kreatinin-index                         32   0.32   [-0.03;  0.60]   0.0748
+
+==============================================================================
+4. BALANCE OG RATIO — gennemsnit vs. median af de 3 dage
+==============================================================================
+
+>>> mod GFR_SHEET (CrCl)
+Analyse                                      n    rho            95 % CI        p
+---------------------------------------------------------------------------------
+Fosforbalance, vejet [gns]                  31   0.09   [-0.27;  0.43]   0.6152
+Fosforbalance, vejet [median]               31   0.16   [-0.20;  0.49]   0.3860
+Fosforbalance, foto [gns]                   31  -0.12   [-0.46;  0.24]   0.5098
+Fosforbalance, foto [median]                31  -0.17   [-0.49;  0.20]   0.3601
+Fosfor-ratio E/I, vejet [gns]               31   0.19   [-0.18;  0.51]   0.3072
+Fosfor-ratio E/I, vejet [median]            31   0.09   [-0.27;  0.43]   0.6305
+Fosfor-ratio E/I, foto [gns]                31   0.31   [-0.05;  0.60]   0.0870
+Fosfor-ratio E/I, foto [median]             31   0.34   [-0.02;  0.62]   0.0630
+Natriumbalance, vejet [gns]                 31  -0.30   [-0.59;  0.06]   0.1006
+Natriumbalance, vejet [median]              31  -0.42   [-0.67; -0.08]   0.0191 *
+Natriumbalance, foto [gns]                  31  -0.35   [-0.62;  0.01]   0.0566
+Natriumbalance, foto [median]               31  -0.34   [-0.62;  0.01]   0.0588
+Natrium-ratio E/I, vejet [gns]              31   0.24   [-0.12;  0.55]   0.1905
+Natrium-ratio E/I, vejet [median]           31   0.32   [-0.04;  0.61]   0.0795
+Natrium-ratio E/I, foto [gns]               31   0.20   [-0.17;  0.52]   0.2817
+Natrium-ratio E/I, foto [median]            31   0.19   [-0.17;  0.51]   0.2968
+
+>>> mod EGFR (eGFR)
+Analyse                                      n    rho            95 % CI        p
+---------------------------------------------------------------------------------
+Fosforbalance, vejet [gns]                  31   0.46   [ 0.13;  0.70]   0.0086 *
+Fosforbalance, vejet [median]               31   0.46   [ 0.12;  0.70]   0.0096 *
+Fosforbalance, foto [gns]                   31   0.16   [-0.20;  0.49]   0.3809
+Fosforbalance, foto [median]                31   0.15   [-0.22;  0.48]   0.4229
+Fosfor-ratio E/I, vejet [gns]               31  -0.43   [-0.68; -0.09]   0.0147 *
+Fosfor-ratio E/I, vejet [median]            31  -0.50   [-0.72; -0.17]   0.0044 *
+Fosfor-ratio E/I, foto [gns]                31  -0.22   [-0.54;  0.14]   0.2272
+Fosfor-ratio E/I, foto [median]             31  -0.21   [-0.53;  0.15]   0.2546
+Natriumbalance, vejet [gns]                 31   0.18   [-0.19;  0.50]   0.3397
+Natriumbalance, vejet [median]              31   0.04   [-0.32;  0.39]   0.8138
+Natriumbalance, foto [gns]                  31  -0.14   [-0.47;  0.23]   0.4626
+Natriumbalance, foto [median]               31  -0.11   [-0.45;  0.25]   0.5557
+Natrium-ratio E/I, vejet [gns]              31  -0.15   [-0.48;  0.21]   0.4078
+Natrium-ratio E/I, vejet [median]           31  -0.05   [-0.40;  0.31]   0.7854
+Natrium-ratio E/I, foto [gns]               31   0.17   [-0.20;  0.49]   0.3737
+Natrium-ratio E/I, foto [median]            31   0.14   [-0.23;  0.47]   0.4660
+
+>>> mod P_CR (P-kreatinin)
+Analyse                                      n    rho            95 % CI        p
+---------------------------------------------------------------------------------
+Fosforbalance, vejet [gns]                  31  -0.36   [-0.64; -0.01]   0.0442 *
+Fosforbalance, vejet [median]               31  -0.36   [-0.63; -0.00]   0.0491 *
+Fosforbalance, foto [gns]                   31  -0.19   [-0.51;  0.17]   0.3019
+Fosforbalance, foto [median]                31  -0.17   [-0.50;  0.19]   0.3508
+Fosfor-ratio E/I, vejet [gns]               31   0.45   [ 0.11;  0.69]   0.0120 *
+Fosfor-ratio E/I, vejet [median]            31   0.52   [ 0.21;  0.74]   0.0025 *
+Fosfor-ratio E/I, foto [gns]                31   0.27   [-0.09;  0.57]   0.1366
+Fosfor-ratio E/I, foto [median]             31   0.26   [-0.10;  0.56]   0.1543
+Natriumbalance, vejet [gns]                 31  -0.23   [-0.54;  0.14]   0.2223
+Natriumbalance, vejet [median]              31  -0.13   [-0.46;  0.24]   0.4869
+Natriumbalance, foto [gns]                  31   0.08   [-0.28;  0.42]   0.6796
+Natriumbalance, foto [median]               31   0.07   [-0.29;  0.41]   0.7116
+Natrium-ratio E/I, vejet [gns]              31   0.17   [-0.20;  0.49]   0.3606
+Natrium-ratio E/I, vejet [median]           31   0.09   [-0.27;  0.43]   0.6143
+Natrium-ratio E/I, foto [gns]               31  -0.16   [-0.48;  0.21]   0.3999
+Natrium-ratio E/I, foto [median]            31  -0.15   [-0.48;  0.22]   0.4262
+
+==============================================================================
+5. GRUPPESAMMENLIGNING <20 vs. >=20 ml/min (Mann-Whitney)
+==============================================================================
+>>> Grænse sat paa DIN GFR-kolonne (som i specialet)
+
+Udfald                              <20 (n)      >=20 (n)  HL-diff        p
+---------------------------------------------------------------------------
+Na-balance vejet [gns]            179.4 ( 8)    -333.5 (23)    592.4   0.1209
+Na-balance vejet [med]            274.4 ( 8)    -437.5 (23)    716.4   0.0481 *
+Na-balance foto [gns]             -75.5 ( 8)    -495.3 (23)    691.2   0.0742
+Na-balance foto [med]             -46.4 ( 8)    -495.3 (23)    697.3   0.0538
+Na-ratio foto [gns]               101.9 ( 8)     126.2 (23)    -41.4   0.0908
+P-balance vejet [gns]             479.8 ( 8)     498.1 (23)     -6.2   0.9120
+P-balance foto [gns]              492.1 ( 8)     514.3 (23)     53.1   0.6420
+P-ratio foto [gns]                 44.2 ( 8)      57.7 (23)    -11.5   0.2369
+U-natrium (mg)                   1550.1 ( 8)    2246.1 (24)   -794.3   0.0780
+U-Na/U-krea                         9.1 ( 8)      11.7 (24)     -1.6   0.4037
+FE-fosfat                          43.6 ( 8)      34.9 (24)      8.1   0.1603
+P-fosfat                            1.4 ( 8)       1.3 (24)      0.1   0.2397
+Kreatinin-index                    10.1 ( 8)      12.8 (24)     -2.5   0.1241
+
+>>> Samme grænse, men paa eGFR < 20 (uafhaengigt af opsamling)
+
+Udfald                              <20 (n)      >=20 (n)  HL-diff        p
+---------------------------------------------------------------------------
+Na-balance vejet [gns]           -401.4 (12)     -96.6 (19)   -411.9   0.1005
+Na-balance foto [gns]            -238.6 (13)    -490.3 (18)     91.4   0.7947
+U-natrium (mg)                   2207.0 (13)    2172.6 (19)    236.8   0.7589
+U-Na/U-krea                         9.7 (13)      12.6 (19)     -1.9   0.3775
+FE-fosfat                          44.8 (13)      33.0 (19)     16.1   0.0006 *
+P-fosfat                            1.4 (13)       1.1 (19)      0.3   0.0009 *
+
+==============================================================================
+6. SENSITIVITETSANALYSE — uden de 7 med kreatinin-index < 10
+==============================================================================
+n = 32 -> 25
+
+Analyse                                          alle      uden flaggede
+------------------------------------------------------------------------
+FE-fosfat vs. eGFR                    -0.51 (p=0.003)    -0.46 (p=0.021)
+FE-fosfat vs. P-kreatinin             +0.59 (p=0.000)    +0.58 (p=0.002)
+FE-fosfat vs. CrCl                    -0.17 (p=0.340)    -0.03 (p=0.887)
+P-fosfat vs. eGFR                     -0.68 (p=0.000)    -0.77 (p=0.000)
+U-natrium vs. CrCl                    +0.54 (p=0.001)    +0.57 (p=0.003)
+U-natrium vs. eGFR                    +0.09 (p=0.638)    +0.17 (p=0.423)
+Na-balance foto vs. CrCl              -0.35 (p=0.057)    -0.27 (p=0.210)
+Na-balance foto vs. eGFR              -0.14 (p=0.463)    -0.11 (p=0.599)
+P-ratio vejet vs. P-kreatinin         +0.45 (p=0.012)    +0.52 (p=0.009)
+
+==============================================================================
+7. INDTAGS-PARADOKSET — korrelerer kostregistreringen med maalemetoden?
+==============================================================================
+Der er INGEN fysiologisk grund til at kostregistreringens indhold
+skulle afhaenge af hvilket nyrefunktionsmaal man bruger.
+
+Analyse                                      n    rho            95 % CI        p
+---------------------------------------------------------------------------------
+Na-indtag vejet vs. CrCl                    31   0.45   [ 0.11;  0.69]   0.0118 *
+Na-indtag vejet vs. eGFR                    31   0.29   [-0.07;  0.58]   0.1129
+Na-indtag vejet vs. P-kreatinin             31  -0.02   [-0.37;  0.33]   0.9006
+
+Na-indtag foto vs. CrCl                     31   0.30   [-0.06;  0.59]   0.1035
+Na-indtag foto vs. eGFR                     31   0.07   [-0.29;  0.42]   0.7031
+Na-indtag foto vs. P-kreatinin              31   0.10   [-0.27;  0.44]   0.6090
+
+P-indtag vejet vs. CrCl                     31   0.35   [-0.01;  0.62]   0.0569
+P-indtag vejet vs. eGFR                     31   0.17   [-0.20;  0.49]   0.3710
+P-indtag vejet vs. P-kreatinin              31  -0.00   [-0.36;  0.35]   0.9888
+
+P-indtag foto vs. CrCl                      31   0.23   [-0.14;  0.54]   0.2160
+P-indtag foto vs. eGFR                      31  -0.10   [-0.44;  0.27]   0.6094
+P-indtag foto vs. P-kreatinin               31   0.12   [-0.25;  0.45]   0.5217
+
+
+==============================================================================
+8. DESKRIPTIV TABEL — til dine slides
+==============================================================================
+Variabel                             n              Median (IQR)
+----------------------------------------------------------------
+Kreatininclearance (ml/min)         32          25.0 (20.4–27.7)
+eGFR (ml/min/1.73m2)                32          20.0 (16.2–24.2)
+P-kreatinin (µmol/L)                32       244.0 (189.0–294.8)
+Kreatinin-index (mg/kg/d)           32          11.8 (10.2–14.5)
+Kropsvaegt (kg)                     32          77.0 (70.9–88.6)
+FE-fosfat (%)                       32          36.6 (30.9–45.0)
+P-fosfat (mmol/L)                   32             1.3 (1.1–1.4)
+U-fosfat (mg/d)                     32       473.9 (346.5–714.7)
+U-natrium (mg/d)                    32    2189.8 (1582.3–2999.6)
+P-indtag vejet (mg/d)               31      970.0 (829.2–1256.7)
+P-indtag foto (mg/d)                31     1068.3 (819.5–1225.0)
+Na-indtag vejet (mg/d)              31    2008.0 (1579.3–2552.7)
+Na-indtag foto (mg/d)               31    1853.3 (1344.0–2412.0)
+P-balance vejet (mg/d)              31       498.1 (372.9–709.5)
+P-balance foto (mg/d)               31       501.0 (348.3–644.6)
+Na-balance vejet (mg/d)             31     -265.9 (-636.2–136.7)
+Na-balance foto (mg/d)              31     -398.9 (-826.3–-82.0)
+P-ratio vejet (%)                   31          48.0 (37.0–58.1)
+Na-ratio vejet (%)                  31        113.9 (93.4–131.4)
+
+Skrevet: analysis/speciale_alle_variable.csv
